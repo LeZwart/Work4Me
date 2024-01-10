@@ -1,0 +1,38 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 1rem;
+    background-color: #b4c0d6;
+    border-bottom: 1px solid #babebf;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav ul li{
+    list-style: none;
+    background-color: #aabfe7;
+    padding: 5px;
+    margin-left: 10px   ;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+li:hover {
+    background-color: #758397;
+}
+
+main {
+    background-color: #aceafb36;
+
+    padding: 1rem;
+
+    height: ;
+}
