@@ -31,8 +31,14 @@ li:hover {
 
 main {
     background-color: #aceafb36;
+    padding: 20px;
 
-    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-    height: ;
+.homepage-img {
+    height: 100px;
+    width: 100px;
 }

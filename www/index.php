@@ -20,7 +20,13 @@
         </header>
 
         <main class="homepage-main">
-            <h2></h2>
+            <section>
+                <h2>Word fit met ons!</h2>
+                <p>Maak een account aan en probeer onze workouts!</p>
+            </section>
+            <section>
+                <img id="homepage-img" src="nothing.jpg">
+            </section>
         </main>
 
         <footer class="homepage-footer">
