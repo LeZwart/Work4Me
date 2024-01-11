@@ -9,12 +9,12 @@
     </head>
     <body>
         <header class="homepage-header">
-            <h1>Work4Me</h1>
+            <a href="index.php" class="homelink">Work 4 Me</a>
             <nav class="header-nav">
                 <ul>
                     <li><a href="index.php">Home</a></li>
                     <li><a href="login.php">Log In</a></li>
-                    <li><a href="register.php">Register</a></li>
+                    <li><a href="register.php">Registreer</a></li>
                 </ul>
             </nav>
         </header>
@@ -25,12 +25,13 @@
                 <p>Maak een account aan en probeer onze workouts!</p>
             </section>
             <section>
-                <img id="homepage-img" src="nothing.jpg">
+                <!-- TODO -->
+                <!-- Iets moet hier -->
             </section>
         </main>
 
         <footer class="homepage-footer">
-            <p>Work4Me</p>
+            <p>Work4Me Blok 04</p>
             <p>Project door Leon Zwart</p>
         </footer>
     </body>

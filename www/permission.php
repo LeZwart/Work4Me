@@ -14,10 +14,11 @@ class Permission
     public $MANAGER_PERMISSIONS = [1, 2, 4, 5, 6, 7];
     public $USER_PERMISSIONS = [1, 4, 6, 7];
 
-
+        // Voorbeeld //
         // require "permission.php";
         // $permission = new Permission();
         // $result = $permission->checkPermission(4, "Administrator");
+        // // // // //
 
     public function checkPermission($permission_id, $role) {
         switch ($role) {
