@@ -1,10 +1,8 @@
 <?php
 require "database.php";
-require "permission.php";
 
 session_start();
 
-$permission = new Permission();
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +11,7 @@ $permission = new Permission();
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="main-style.css">
-        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="workouts.css">
         <title>Work4Me</title>
     </head>
     <body>
@@ -26,34 +24,25 @@ $permission = new Permission();
                     if (isset($_SESSION['user'])) {
                         echo "<li><a href='workouts.php'>Workouts</a></li>";
                         echo "<li><a href='logout.php'>Logout</a></li>";
-
-                        if ($permission->checkPermission(5, $_SESSION['user']['Rol'])) {
-                            echo "<li><a href='dashboard.php'>Dashboard</a></li>";
-                        }
                     } else {
                         echo "<li><a href='login.php'>Login</a></li>";
                         echo "<li><a href='register.php'>Registreer</a></li>";
                     }
-                    
                     ?>
                 </ul>
             </nav>
         </header>
 
         <main class="homepage-main">
-            <section>
-                <h2>Word fit met ons!</h2>
-                <?php 
-                if (isset($_SESSION['user'])) {
-                    echo "<p>Welkom " . $_SESSION['user']['Gebruikersnaam'] . "</p>";
-                } else {
-                    echo "<p>Maak een account aan en probeer onze workouts!</p>";
-                }
-                ?>
+            <section class="search-filter">
+                <form action="workouts.php" method="GET">
+                    <label for="search">Zoek naar workouts</label>
+                    <input type="text" name="search" id="search" placeholder="Zoekterm">
+                    <input type="submit" value="Zoek">
+                </form>
             </section>
-            <section>
-                <!-- TODO -->
-                <!-- Iets moet hier -->
+            <section class="workouts">
+
             </section>
         </main>
 

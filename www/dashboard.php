@@ -5,6 +5,12 @@ require "permission.php";
 session_start();
 
 $permission = new Permission();
+
+if (isset($_SESSION['user']) && !$permission->checkPermission(5, $_SESSION['user']['Rol'])) {
+    header("Location: index.php");
+    exit();
+}
+        
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +19,6 @@ $permission = new Permission();
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="main-style.css">
-        <link rel="stylesheet" href="index.css">
         <title>Work4Me</title>
     </head>
     <body>
@@ -40,24 +45,11 @@ $permission = new Permission();
             </nav>
         </header>
 
-        <main class="homepage-main">
-            <section>
-                <h2>Word fit met ons!</h2>
-                <?php 
-                if (isset($_SESSION['user'])) {
-                    echo "<p>Welkom " . $_SESSION['user']['Gebruikersnaam'] . "</p>";
-                } else {
-                    echo "<p>Maak een account aan en probeer onze workouts!</p>";
-                }
-                ?>
-            </section>
-            <section>
-                <!-- TODO -->
-                <!-- Iets moet hier -->
-            </section>
+        <main>
+        <h2>Dashboard</h2>
         </main>
 
-        <footer class="homepage-footer">
+        <footer>
             <p>Work4Me Blok 04</p>
             <p>Project door Leon Zwart</p>
         </footer>
