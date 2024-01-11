@@ -21,7 +21,11 @@
         </header>
         <main>
             <form action="process-register.php" method="POST">
-                
+
+                <label for="firstname">Naam</label>
+                <input type="text" name="firstname" id="firstname" placeholder="Voornaam">
+                <input type="text" name="infix" id="infix" placeholder="Tussenvoegsel">
+                <input type="text" name="lastname" id="lastname" placeholder="Achternaam">
                 <br>
                 <label for="username">Gebruikersnaam</label>
                 <input type="text" name="username" id="username" placeholder="Gebruikersnaam">
@@ -30,7 +34,7 @@
                 <label for="password">Wachtwoord</label>
                 <input type="password" name="password" id="password" placeholder="Wachtwoord">
                 <input type="submit" value="Log In">
-                <a href="register.php" class="redirect-login-register">Heb je al een account? Log in!</a>
+                <a href="login.php" class="redirect-login-register">Heb je al een account? Log in!</a>
             </form>
         </main>
         <footer class="homepage-footer">

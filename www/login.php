@@ -20,9 +20,9 @@
             </nav>
         </header>
         <main>
-            <form action="" method="get">
-                <label for="username">Gebruikersnaam</label>
-                <input type="text" name="username" id="username" placeholder="Gebruikersnaam">
+            <form action="process-login.php" method="POST">
+                <label for="email">E-Mail</label>
+                <input type="email" name="email" id="email" placeholder="voorbeeld@work4me.nl">
                 <label for="password">Wachtwoord</label>
                 <input type="password" name="password" id="password" placeholder="Wachtwoord">
                 <input type="submit" value="Log In">
