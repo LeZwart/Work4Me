@@ -1,6 +1,7 @@
 <?php
 require "database.php";
 
+session_start();
 
 ?>
 
@@ -19,8 +20,15 @@ require "database.php";
             <nav class="header-nav">
                 <ul>
                     <li><a href="index.php">Home</a></li>
-                    <li><a href="login.php">Log In</a></li>
-                    <li><a href="register.php">Registreer</a></li>
+                    <?php 
+                    if (isset($_SESSION['user'])) {
+                        echo "<li><a href='workouts.php'>Workouts</a></li>";
+                        echo "<li><a href='logout.php'>Logout</a></li>";
+                    } else {
+                        echo "<li><a href='login.php'>Login</a></li>";
+                        echo "<li><a href='register.php'>Registreer</a></li>";
+                    }
+                    ?>
                 </ul>
             </nav>
         </header>
@@ -28,7 +36,13 @@ require "database.php";
         <main class="homepage-main">
             <section>
                 <h2>Word fit met ons!</h2>
-                <p>Maak een account aan en probeer onze workouts!</p>
+                <?php 
+                if (isset($_SESSION['user'])) {
+                    echo "<p>Welkom " . $_SESSION['user']['Gebruikersnaam'] . "</p>";
+                } else {
+                    echo "<p>Maak een account aan en probeer onze workouts!</p>";
+                }
+                ?>
             </section>
             <section>
                 <!-- TODO -->
