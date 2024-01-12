@@ -20,6 +20,7 @@ class Permission
         // $result = $permission->checkPermission(4, "Administrator");
         // // // // //
 
+    // voor 1
     public function checkPermission($permission_id, $role) {
         switch ($role) {
             case "Administrator":
@@ -37,6 +38,16 @@ class Permission
             default:
                 throw new Exception($role . " is not a valid role.");
         }
+    }
+
+    // voor meerdere 
+    public function checkPermissions($permission_ids, $role) {
+        foreach ($permission_ids as $permission_id) {
+            if (!$this->checkPermission($permission_id, $role)) {
+                return false;
+            }
+        }
+        return true;
     }
 }
 ?>

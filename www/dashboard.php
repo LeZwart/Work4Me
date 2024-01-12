@@ -35,9 +35,7 @@ if (isset($_SESSION['user'])) {
             <nav>
                 <ul>
                     <li><a href="dashboard.php">Dashboard</a></li>
-                    <li><a href="dashboard.php">Dashboard</a></li>
-                    <li><a href="dashboard.php">Dashboard</a></li>
-                    <li><a href="dashboard.php">Dashboard</a></li>  
+                    
                 </ul>
             </nav>
         </section>
