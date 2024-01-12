@@ -1,13 +1,36 @@
+main {
+    display: flex;
+    flex-direction: row;
+}
+
 .search-filter {
     background-color: #93b6d7;
+    padding: 1rem;
+
+    width: 20%;
+}
+
+.workouts {
+    width: 80%;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    max-height: 100vh;
+    overflow: auto;
 }
 
 .workout-article {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
     align-items: center;
     margin: 2rem;
+
+    padding: 7px;
+    border-radius: 5px;
+    border: 1px solid #0c333f;
 
     height: 300px;
     width: 300px;
@@ -15,7 +38,28 @@
     background-color: #93b6d7;
 }
 
-.workout-img {
-    width: 100px;
-    height: 100px;
+img {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 10px 10px 0 0;
 }
+
+.workout-bekijk {
+    width: 100%;
+    height: 3rem;
+    background-color: #7daad4;
+    
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 0 0 5px 5px;
+}
+
+.workout-bekijk:hover {
+    background-color: #7cd0ea51;
+}
+
