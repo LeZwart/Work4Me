@@ -9,7 +9,7 @@ html {
     padding: 0;
     margin: 0;
     min-height: 100%;
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.3), rgba(113, 142, 146, 0.3)), url(images/legs-running-on-track.jpg);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.3), rgba(113, 142, 146, 0.3)), url(../images/legs-running-on-track.jpg);
     background-size: cover;
 }
 
@@ -24,14 +24,14 @@ a {
 }
 
 li:hover {
-    background-color: #758397;
+    background-color: #93b6d782;    
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 1rem;
+    padding: 1rem   ;
     background-color: #b4c0d6;
     border-bottom: 1px solid #babebf;
     box-shadow: -1px 16px 12px -3px #59636874;
@@ -43,11 +43,11 @@ header nav ul {
     align-items: center;
 }
 
-header nav ul li {
+nav ul li {
     list-style: none;
     background-color: #93b6d7;
     padding: 10px 20px;
-    margin-left: 10px;
+    margin: .2em;
 }
 
 .homelink {

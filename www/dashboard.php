@@ -1,13 +1,18 @@
 <?php
+session_start();
+
 require "database.php";
 require "permission.php";
 
-session_start();
-
 $permission = new Permission();
 
-if (isset($_SESSION['user']) && !$permission->checkPermission(5, $_SESSION['user']['Rol'])) {
-    header("Location: index.php");
+if (isset($_SESSION['user'])) {
+    if (!$permission->checkPermission(5, $_SESSION['user']['Rol'])) {
+        header("Location: index.php");
+        exit();
+    }
+} else {
+    header("Location: login.php");
     exit();
 }
         
@@ -18,41 +23,31 @@ if (isset($_SESSION['user']) && !$permission->checkPermission(5, $_SESSION['user
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="main-style.css">
+        <link rel="stylesheet" href="css/main-style.css">
+        <link rel="stylesheet" href="css/dashboard.css">
         <title>Work4Me</title>
     </head>
     <body>
-        <header class="homepage-header">
-            <a href="index.php" class="homelink">Work 4 Me</a>
-            <nav class="header-nav">
-                <ul>
-                    <li><a href="index.php">Home</a></li>
-                    <?php 
-                    if (isset($_SESSION['user'])) {
-                        echo "<li><a href='workouts.php'>Workouts</a></li>";
-                        echo "<li><a href='logout.php'>Logout</a></li>";
-
-                        if ($permission->checkPermission(5, $_SESSION['user']['Rol'])) {
-                            echo "<li><a href='dashboard.php'>Dashboard</a></li>";
-                        }
-                    } else {
-                        echo "<li><a href='login.php'>Login</a></li>";
-                        echo "<li><a href='register.php'>Registreer</a></li>";
-                    }
-                    
-                    ?>
-                </ul>
-            </nav>
-        </header>
+        <?php require "header.php"; ?>
 
         <main>
-        <h2>Dashboard</h2>
+        <section class="nav-options">
+            <nav>
+                <ul>
+                    <li><a href="dashboard.php">Dashboard</a></li>
+                    <li><a href="dashboard.php">Dashboard</a></li>
+                    <li><a href="dashboard.php">Dashboard</a></li>
+                    <li><a href="dashboard.php">Dashboard</a></li>  
+                </ul>
+            </nav>
+        </section>
+        <section class="info-section">
+            <h1>Dashboard</h1>
+            <p>Welkom op het dashboard. Hier kan je de statistieken van de website bekijken.</p>
+        </section>
         </main>
 
-        <footer>
-            <p>Work4Me Blok 04</p>
-            <p>Project door Leon Zwart</p>
-        </footer>
+        <?php require "footer.php"; ?>
     </body>
 </html>
 

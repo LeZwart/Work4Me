@@ -1,3 +1,15 @@
+<?php
+    session_start();
+
+    require "database.php";
+    require "permission.php";
+    
+    $permission = new Permission();
+    
+    if(isset($_SESSION['user_id'])){
+        header("Location: index.php");
+    }
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -8,17 +20,7 @@
         <title>Work4Me - Registratie</title>
     </head>
     <body>
-    <header>
-            <a class="homelink" href="index.php">Work 4 Me</a>
-            <h2>Registratie</h2>
-            <nav class="header-nav">
-                <ul>
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="login.php">Log In</a></li>
-                    <li><a href="register.php">Registreer</a></li>
-                </ul>
-            </nav>
-        </header>
+        <?php require "header.php"; ?>
         <main>
             <form action="process-register.php" method="POST">
 
@@ -50,9 +52,6 @@
                 <a href="login.php" class="redirect-login-register">Heb je al een account? Log in!</a>
             </form>
         </main>
-        <footer>
-            <p>Work4Me Blok 04</p>
-            <p>Project door Leon Zwart</p>
-        </footer>
+        <?php require "footer.php"; ?>
     </body>
 </html>

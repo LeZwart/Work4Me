@@ -1,0 +1,19 @@
+main {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    padding: 10px;
+}
+
+section {
+    background-color: #99d4ff69;
+    margin: 5px;
+}
+
+.nav-options {
+    width: 20%
+}
+
+.info-section {
+    width: 80%;
+}
