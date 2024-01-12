@@ -77,6 +77,7 @@ $workouts = mysqli_fetch_all($result, MYSQLI_ASSOC);
                         <?php endforeach; ?>
                     </tbody>
                 </table>
+                <a id="createworkout" href="createworkout.php">Maak Workout</a>
             </div>
         </section>
         </main>

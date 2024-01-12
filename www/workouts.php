@@ -67,6 +67,7 @@ $permission = new Permission();
                     echo "<p>Geen workouts gevonden</p>";
                 }
                 ?>
+
             </section>
         </main>
 

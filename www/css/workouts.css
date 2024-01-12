@@ -4,10 +4,20 @@ main {
 }
 
 .search-filter {
-    background-color: #93b6d7;
+    background-color: #99d4ff69;
     padding: 1rem;
 
+    margin: 10px;
+
     width: 20%;
+}
+
+.search-filter input[type="text"] {
+    width: 100%;
+    height: 2rem;
+    border-radius: 5px;
+    border: 1px solid #0c333f;
+    padding: 5px;
 }
 
 .workouts {
@@ -16,7 +26,7 @@ main {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: start;
 
     max-height: 100vh;
     overflow: auto;

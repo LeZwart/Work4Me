@@ -5,9 +5,10 @@ require "database.php";
 require "permission.php";
 
 $permission = new Permission();
+$CheckFor = [5, 3];
 
 if (isset($_SESSION['user'])) {
-    if (!$permission->checkPermission(5, $_SESSION['user']['Rol'])) {
+    if (!$permission->checkPermissions($CheckFor, $_SESSION['user']['Rol'])) {
         header("Location: index.php");
         exit();
     }
@@ -68,7 +69,7 @@ $gebruikers = mysqli_fetch_all($result, MYSQLI_ASSOC)
                             <td><?php echo $gebruiker['Gebruikersnaam']; ?></td>
                             <td><?php echo $gebruiker['Email']; ?></td>
                             <td><?php echo $gebruiker['Rol']; ?></td>
-                            <td><a href="dashboardUsers_details.php?UID=<?php echo $gebruiker['GebruikerID']; ?>">Inspecteer</a></td>
+                            <td><a href="dashboardUsers_details.php?id=<?php echo $gebruiker['GebruikerID']; ?>">Inspecteer</a></td>
                         </tr>
                         <?php endforeach; ?>
                     </tbody>
