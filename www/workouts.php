@@ -29,7 +29,10 @@ $permission = new Permission();
                 </form>
             </section>
             <section class="workouts">
-
+                <article class="workout-article">
+                    <h2>Workout Naam</h2>
+                    <img class="workout-img" src="images/500placeholder.png" alt="foto">
+                </article>
             </section>
         </main>
 

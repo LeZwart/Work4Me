@@ -1,3 +1,21 @@
 .search-filter {
     background-color: #93b6d7;
 }
+
+.workout-article {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2rem;
+
+    height: 300px;
+    width: 300px;
+
+    background-color: #93b6d7;
+}
+
+.workout-img {
+    width: 100px;
+    height: 100px;
+}

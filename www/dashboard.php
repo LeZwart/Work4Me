@@ -34,14 +34,21 @@ if (isset($_SESSION['user'])) {
         <section class="nav-options">
             <nav>
                 <ul>
-                    <li><a href="dashboard.php">Dashboard</a></li>
-                    
+                    <li style="background-color: #93b6d782;"><a href="dashboard.php">Statistieken</a></li>
+                    <li><a href="dashboardWorkouts.php">Workouts</a></li>
+                    <li><a href="dashboardUsers.php">Gebruikers</a></li>
                 </ul>
             </nav>
         </section>
         <section class="info-section">
             <h1>Dashboard</h1>
             <p>Welkom op het dashboard. Hier kan je de statistieken van de website bekijken.</p>
+
+            <div class="statistics-display">
+                <p>Aantal gebruikers: <?php echo mysqli_fetch_row(mysqli_query($conn, "SELECT COUNT(*) FROM gebruiker"))[0] ?></p>
+
+                <p>Aantal workouts: <?php echo mysqli_fetch_row(mysqli_query($conn, "SELECT COUNT(*) FROM Workouts"))[0]; ?></p>
+            </div>
         </section>
         </main>
 
