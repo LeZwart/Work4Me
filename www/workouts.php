@@ -6,6 +6,39 @@ require "permission.php";
 
 $permission = new Permission();
     
+
+// Query VVV
+
+$sql = "SELECT * FROM Workouts";
+
+// Als er een zoekterm is dan wordt er gezocht op basis van de zoekterm
+if (isset($_GET['search'])) {
+    $search = $_GET['search'];
+    $sql = "SELECT * FROM Workouts WHERE Titel LIKE '%$search%' OR Omschrijving LIKE '%$search%'";
+}
+
+// SORT BY
+if (isset($_GET['sortby'])) {
+    $sortby = $_GET['sortby'];
+    switch ($sortby) {
+        case "new":
+            $sql .= " ORDER BY Toevoegdatum DESC";
+            break;
+        case "old":
+            $sql .= " ORDER BY Toevoegdatum ASC";
+            break;
+        case "name":
+            $sql .= " ORDER BY Titel ASC";
+            break;
+        default:
+            $sql .= " ORDER BY Titel ASC";
+            break;
+    }
+}
+
+$result = mysqli_query($conn, $sql);
+$resultcount = mysqli_num_rows($result);
+
 ?>
 
 <!DOCTYPE html>
@@ -20,13 +53,18 @@ $permission = new Permission();
     <body>
         <?php require "header.php"; ?>
 
-        <main class="homepage-main">
+        <main>
             <section class="search-filter">
                 <form action="workouts.php" method="GET">
-                    <label for="search">Zoek naar workouts</label>
                     <input type="text" name="search" id="search" placeholder="Zoekterm">
                     <input type="submit" value="Zoek">
+                    <select name="sortby" id="sortby">
+                        <option value="new">Nieuwste</option>
+                        <option value="old">Oudste</option>
+                        <option value="name">Naam</option>
+                    </select>
                 </form>
+                <h2>Resultaten gevonden: <?php echo $resultcount ?></h2>
             </section>
             <section class="workouts">
                 <!-- Dit is hoe een workout eruit ziet
@@ -38,11 +76,6 @@ $permission = new Permission();
                  -->
 
                 <?php
-
-                // TODO: Zoek workouts op basis van de zoekterm
-                $sql = "SELECT * FROM Workouts";
-                $result = mysqli_query($conn, $sql);
-
                 // Zet elke workout in de pagina
                 if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
@@ -60,7 +93,7 @@ $permission = new Permission();
                         echo "<article class='workout-article'>";
                         echo "<h2>" . $title . "</h2>";
                         echo "<img class='workout-img' src='" . $image . "' alt='foto'>";
-                        echo "<a class='workout-bekijk' href='workout.php?id=" . $id . "'>Bekijk workout</a>";
+                        echo "<a class='workout-bekijk' href='workouts_details.php?id=" . $id . "'>Bekijk workout</a>";
                         echo "</article>";
                     }
                 } else {

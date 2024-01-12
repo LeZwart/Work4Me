@@ -20,6 +20,31 @@ main {
     padding: 5px;
 }
 
+.search-filter input[type="submit"] {
+    width: 40%;
+    height: 2rem;
+    border-radius: 5px;
+    border: 1px solid #0c333f;
+    padding: 5px;
+    margin-top: 5px;
+    background-color: #f6fbff;
+
+    cursor: pointer;
+}
+
+.search-filter input[type="submit"]:hover {
+    background-color: #e4f4ffa8;
+}
+
+.search-filter select {
+    width: 58%;
+    height: 2rem;
+    border-radius: 5px;
+    border: 1px solid #0c333f;
+    padding: 5px;
+    margin-top: 5px;
+}
+
 .workouts {
     width: 80%;
 

@@ -41,20 +41,29 @@ header nav ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    list-style: none;
 }
 
-nav ul li {
+nav ul li a {
     list-style: none;
     background-color: #93b6d7;
     padding: 10px 20px;
     margin: .2em;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    list-style: none;
+
 }
 
 .homelink {
     font-size: xx-large;
     font-weight: bold;
     
-    font-family: Georgia, 'Times New Roman', Times, serif   ;
+    font-family: 'Pacifico', cursive;
 }
 
 footer {
