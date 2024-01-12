@@ -13,7 +13,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en">    
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,8 +34,11 @@
 
                 <!-- Geslacht -->
                 <label for="gender">Geslacht</label>
-                <input type="radio" name="gender" value="">
-                <input type="radio" name="gender" value="">
+                <select name="gender" id="gender">
+                    <option value="">Wil ik niet zeggen</option>
+                    <option value="Man">Man</option>
+                    <option value="Vrouw">Vrouw</option>
+                </select>
 
                 <!-- Gebruikersnaam -->
                 <label for="username">Gebruikersnaam</label>
