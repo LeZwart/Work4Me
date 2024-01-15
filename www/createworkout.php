@@ -5,10 +5,9 @@ require "database.php";
 require "permission.php";
 
 $permission = new Permission();
-$CheckFor = [5, 3];
 
 if (isset($_SESSION['user'])) {
-    if (!$permission->checkPermissions($CheckFor, $_SESSION['user']['Rol'])) {
+    if (!$permission->checkPermission(5, $_SESSION['user']['Rol'])) {
         header("Location: index.php");
         exit();
     }
@@ -17,21 +16,7 @@ if (isset($_SESSION['user'])) {
     exit();
 }
 
-if (isset($_GET['id'])) {
-    $id = $_GET['id'];
-} else {
-    header("Location: dashboardUsers.php");
-    exit();
-}
 
-$sql = "SELECT * 
-        FROM gebruiker 
-        JOIN Woonplaats ON gebruiker.WoonplaatsID = Woonplaats.WoonplaatsID 
-        WHERE gebruiker.GebruikerID = '$id'";
-
-$result = mysqli_query($conn, $sql);
-
-$gebruiker = mysqli_fetch_assoc($result);
 ?>
 
 <!DOCTYPE html>
@@ -57,14 +42,13 @@ $gebruiker = mysqli_fetch_assoc($result);
                 </nav>
             </section>
             <section class="info-section">
-                <h1>Gebruiker Details (TODO)</h1>
-                <br>    
+                <h1>Maak Workout</h1>
+                <p>Maak hier een workout aan.</p>
+                <br>
+                <form id="workoutcreation" action="process-createworkout.php" method="post">
 
-                <?php 
-                foreach ($gebruiker as $key => $value) {
-                    echo "<p><strong>$key:</strong> $value</p>";
-                }
-                ?>
+                <input type="submit" value="Maak Workout">
+                </form>
             </section>
         </main>
         <?php require "footer.php"; ?>
