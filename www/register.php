@@ -37,8 +37,8 @@
                         <!-- Geslacht -->
                         <label for="geslacht">Geslacht</label>
                         <select name="geslacht" id="geslacht">
-                            <option value="">Wil ik niet zeggen</option>
-                            <option value="Man">Man</option>
+                            <option value="X">Wil ik niet zeggen</option>
+                            <option value="Man">Man</option>    
                             <option value="Vrouw">Vrouw</option>
                         </select>
 
@@ -64,6 +64,9 @@
 
                         <label for="postcode">Postcode</label>
                         <input type="text" name="postcode" id="postcode" placeholder="Postcode">
+
+                        <label for="plaats">Plaats</label>
+                        <input type="text" name="plaats" id="plaats" placeholder="Plaats">
 
                         <label for="land">Land</label>
                         <select name="land" id="land">
