@@ -58,7 +58,7 @@ $gebruiker = mysqli_fetch_assoc($result);
             </section>
             <section class="info-section">
                 <h1>Gebruiker Details (TODO)</h1>
-                <br>    
+                <br>
 
                 <?php 
                 foreach ($gebruiker as $key => $value) {
