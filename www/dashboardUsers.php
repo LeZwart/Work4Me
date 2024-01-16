@@ -69,7 +69,7 @@ $gebruikers = mysqli_fetch_all($result, MYSQLI_ASSOC)
                             <td><?php echo $gebruiker['Gebruikersnaam']; ?></td>
                             <td><?php echo $gebruiker['Email']; ?></td>
                             <td><?php echo $gebruiker['Rol']; ?></td>
-                            <td><a href="dashboardUsers_details.php?id=<?php echo $gebruiker['GebruikerID']; ?>">Inspecteer</a></td>
+                            <td class="inspect-td"><a href="dashboardUsers_details.php?id=<?php echo $gebruiker['GebruikerID']; ?>">Inspecteer</a></td>
                         </tr>
                         <?php endforeach; ?>
                     </tbody>

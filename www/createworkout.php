@@ -71,6 +71,7 @@ if (isset($_SESSION['user'])) {
     </body>
 </html>
 
+<!-- Not neccesary but neat :) -->
 <script>
     const duur_element = document.getElementById("Duur");
 

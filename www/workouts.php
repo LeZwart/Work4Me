@@ -65,6 +65,14 @@ $resultcount = mysqli_num_rows($result);
                     </select>
                 </form>
                 <h2>Resultaten gevonden: <?php echo $resultcount ?></h2>
+
+                <?php
+                $checkfor = 4; 
+                if ($permission->checkPermissions($checkfor, $_SESSION['user']['Rol'])) {
+                    echo "<a id='createworkout' href='createworkout.php'>Maak workout</a>";
+                }
+
+                ?>
             </section>
             <section class="workouts">
                 <!-- Dit is hoe een workout eruit ziet

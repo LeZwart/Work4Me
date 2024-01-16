@@ -52,10 +52,12 @@ section {
 
 td a {
     color: #0c333f;
-    background-color: #99d4ff69;
+    display: block;
+    
+}
 
-    height: 100%;
-    width: 100%;
+.inspect-td {
+    background-color: #99d4ff69;
 }
 
 #workoutcreation {
@@ -72,4 +74,8 @@ td a {
     border-radius: 10px;
     border: 1px solid #ccc;
     margin-bottom: 10px;
+}
+
+li {
+    list-style-type: none;
 }
