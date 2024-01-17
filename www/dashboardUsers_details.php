@@ -26,8 +26,8 @@ if (isset($_GET['id'])) {
 
 $sql = "SELECT * 
         FROM Gebruiker 
-        JOIN Woonplaats ON gebruiker.WoonplaatsID = Woonplaats.WoonplaatsID 
-        WHERE gebruiker.GebruikerID = '$id'";
+        JOIN Woonplaats ON Gebruiker.WoonplaatsID = Woonplaats.WoonplaatsID 
+        WHERE Gebruiker.GebruikerID = '$id'";
 
 $result = mysqli_query($conn, $sql);
 
