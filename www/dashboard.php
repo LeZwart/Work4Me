@@ -45,7 +45,7 @@ if (isset($_SESSION['user'])) {
             <p>Welkom op het dashboard. Hier kan je de statistieken van de website bekijken.</p>
 
             <div class="statistics-display">
-                <p>Aantal gebruikers: <?php echo mysqli_fetch_row(mysqli_query($conn, "SELECT COUNT(*) FROM gebruiker"))[0] ?></p>
+                <p>Aantal gebruikers: <?php echo mysqli_fetch_row(mysqli_query($conn, "SELECT COUNT(*) FROM Gebruiker"))[0] ?></p>
 
                 <p>Aantal workouts: <?php echo mysqli_fetch_row(mysqli_query($conn, "SELECT COUNT(*) FROM Workouts"))[0]; ?></p>
             </div>

@@ -20,7 +20,7 @@ $password = $_POST['password'];
 
 require "database.php";
 
-$sql = "SELECT * FROM gebruiker WHERE email = '$email'"; // kan je niet ook gewoon "AND Wachtwoord = '$password'" doen?
+$sql = "SELECT * FROM Gebruiker WHERE email = '$email'"; // kan je niet ook gewoon "AND Wachtwoord = '$password'" doen?
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {

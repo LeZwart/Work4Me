@@ -21,9 +21,6 @@ $sql = "SELECT * FROM Workouts";
 $result = mysqli_query($conn, $sql);
 
 $workouts = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
-// var_dump($workouts);
-// exit();
         
 ?>
 
@@ -72,7 +69,7 @@ $workouts = mysqli_fetch_all($result, MYSQLI_ASSOC);
                             <td><?php echo $workout['Titel']?></td>
                             <td><?php echo $workout["Omschrijving"]?></td>
                             <td><?php echo $workout["Toevoegdatum"]?></td>
-                            <td><a href="DashboardWorkouts_details?WorkoutID=<?php $workout["WorkoutID"] ?>">Inspecteer</a></td>
+                            <td class="inspect-td"><a href="DashboardWorkouts_details?WorkoutID=<?php $workout["WorkoutID"] ?>">Inspecteer</a></td>
                         </tr>
                         <?php endforeach; ?>
                     </tbody>

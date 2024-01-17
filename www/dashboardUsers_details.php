@@ -25,7 +25,7 @@ if (isset($_GET['id'])) {
 }
 
 $sql = "SELECT * 
-        FROM gebruiker 
+        FROM Gebruiker 
         JOIN Woonplaats ON gebruiker.WoonplaatsID = Woonplaats.WoonplaatsID 
         WHERE gebruiker.GebruikerID = '$id'";
 

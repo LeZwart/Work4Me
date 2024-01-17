@@ -58,10 +58,10 @@ if (isset($_SESSION['user'])) {
 
                     <label for="Notitie">Notitie</label>
                     <input type="text" name="Notitie" id="Notitie" placeholder="Notitie">
-
-
+<!-- 
                     <label for="Afbeelding">Afbeelding</label>
-                    <input type="file" name="Afbeelding">
+                    <input type="file" name="Afbeelding"> -->
+                   
 
                     <input type="submit" value="Maak Workout">
                 </form>

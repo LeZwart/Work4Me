@@ -6,12 +6,7 @@ require "database.php";
 
 $permission = new Permission();
 
-if (isset($_SESSION['user'])) {
-    if (!$permission->checkPermission(5, $_SESSION['user']['Rol'])) {
-        header("Location: index.php");
-        exit();
-    }
-} else {
+if (!isset($_SESSION['user'])) {
     header("Location: login.php");
     exit();
 }
@@ -32,14 +27,16 @@ if (isset($_GET['id'])) {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="main-style.css">
+        <link rel="stylesheet" href="css/main-style.css">
+        <link rel="stylesheet" href="css/workouts.css">
         <title>Work4Me</title>
     </head>
     <body>
         <?php require "header.php"; ?>
         <main>
             <section class="workout-details">
-                <h1>Workout details</h1>
+                <a href="workouts.php" id=""><h1> < Terug naar workouts</h1></a>
+
                 <div class="workout-details-container">
                     <?php
                     $sql = "SELECT * FROM Workouts WHERE WorkoutID = $id";
@@ -48,13 +45,15 @@ if (isset($_GET['id'])) {
                     ?>
                     <div class="workout-details-info">
                         <h2><?php echo $workout['Titel']; ?></h2>
-                        <p><?php echo $workout['Omschrijving']; ?></p>
-                        <p><?php echo $workout['Toevoegdatum']; ?></p>
-                    </div>
-                    <div class="workout-details-image">
-                        <img src="images/<?php echo $workout['Afbeelding']; ?>" alt="">
+                        <br>
+                        <p><strong>Omschrijving:</strong> <?php echo $workout['Omschrijving']; ?></p>
+                        <p><strong>Lengte:</strong> <?php echo $workout['Duur']; ?>~ minuten</p>
+                        <p><strong>Notitie:</strong> <?php echo $workout['Notitie']; ?></p>
+                        <br>
+                        <img src="<?php echo $workout['Afbeelding']; ?>" alt="Afbeelding workout">
                     </div>
                 </div>
+                
             </section>
         </main>
         <?php require "footer.php"; ?>

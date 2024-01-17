@@ -58,7 +58,7 @@ if (
  }
 
 // Check if email is not already used
-$sql = "SELECT * FROM `gebruiker` WHERE `email` = '$email'";
+$sql = "SELECT * FROM `Gebruiker` WHERE `email` = '$email'";
 $result = mysqli_query($conn, $sql);
 $emailcount = mysqli_num_rows($result);
 
@@ -68,7 +68,7 @@ if ($emailcount > 0) {
 }
 
 // Check if username is not already used
-$sql = "SELECT * FROM `gebruiker` WHERE `gebruikersnaam` = '$gebruikersnaam'";
+$sql = "SELECT * FROM `Gebruiker` WHERE `gebruikersnaam` = '$gebruikersnaam'";
 $result = mysqli_query($conn, $sql);
 $usernamecount = mysqli_num_rows($result);
 
@@ -89,7 +89,7 @@ mysqli_query($conn, $sql_woonplaats);
 // Get the ID of the last inserted row
 $woonplaats_id = mysqli_insert_id($conn);
 
-$sql_gebruiker = "INSERT INTO `gebruiker` (`Voornaam`, `Tussenvoegsel`, `Achternaam`, `Geslacht`, `Gebruikersnaam`, `email`, `Wachtwoord`, `WoonplaatsID`, `Rol`)
+$sql_gebruiker = "INSERT INTO `Gebruiker` (`Voornaam`, `Tussenvoegsel`, `Achternaam`, `Geslacht`, `Gebruikersnaam`, `email`, `Wachtwoord`, `WoonplaatsID`, `Rol`)
                   VALUES ('$voornaam', '$tussenvoegsel', '$achternaam', '$geslacht', '$gebruikersnaam', '$email', '$wachtwoord', '$woonplaats_id', 'Regular')";
 
 mysqli_query($conn, $sql_gebruiker);
@@ -98,7 +98,7 @@ mysqli_query($conn, $sql_gebruiker);
 if (mysqli_affected_rows($conn) > 0) {
 
     // Login the user
-    $sql = "SELECT * FROM gebruiker WHERE email = '$email'"; // kan je niet ook gewoon "AND Wachtwoord = '$password'" doen?
+    $sql = "SELECT * FROM Gebruiker WHERE email = '$email'"; // kan je niet ook gewoon "AND Wachtwoord = '$password'" doen?
     $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) > 0) {

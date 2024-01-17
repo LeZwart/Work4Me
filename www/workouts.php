@@ -6,6 +6,15 @@ require "permission.php";
 
 $permission = new Permission();
     
+if (isset($_SESSION['user'])) {
+    if (!$permission->checkPermission(4, $_SESSION['user']['Rol'])) {
+        header("Location: index.php");
+        exit();
+    }
+} else {
+    header("Location: login.php");
+    exit();
+}
 
 // Query VVV
 
@@ -67,8 +76,8 @@ $resultcount = mysqli_num_rows($result);
                 <h2>Resultaten gevonden: <?php echo $resultcount ?></h2>
 
                 <?php
-                $checkfor = 4; 
-                if ($permission->checkPermissions($checkfor, $_SESSION['user']['Rol'])) {
+                $checkfor = 2; 
+                if ($permission->checkPermission($checkfor, $_SESSION['user']['Rol'])) {
                     echo "<a id='createworkout' href='createworkout.php'>Maak workout</a>";
                 }
 
@@ -92,7 +101,7 @@ $resultcount = mysqli_num_rows($result);
                         $id = $row['WorkoutID'];
 
                         // Als er geen foto is dan wordt er een placeholder gebruikt
-                        $placeholder = "images/500placeholder.png";
+                        $placeholder = "images/placeholder.png";
                         if ($image === "") {
                             $image = $placeholder;
                         }

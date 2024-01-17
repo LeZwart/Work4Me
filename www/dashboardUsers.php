@@ -18,7 +18,7 @@ if (isset($_SESSION['user'])) {
 }
 
 
-$sql = "SELECT * FROM gebruiker";
+$sql = "SELECT * FROM Gebruiker";
 $result = mysqli_query($conn, $sql);
 
 $gebruikers = mysqli_fetch_all($result, MYSQLI_ASSOC)
