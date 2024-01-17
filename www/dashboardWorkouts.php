@@ -69,9 +69,11 @@ $workouts = mysqli_fetch_all($result, MYSQLI_ASSOC);
                             <td><?php echo $workout['Titel']?></td>
                             <td><?php echo $workout["Omschrijving"]?></td>
                             <td><?php echo $workout["Toevoegdatum"]?></td>
-                            <td class="inspect-td"><a href="DashboardWorkouts_details?WorkoutID=<?php $workout["WorkoutID"] ?>">Inspecteer</a></td>
+                            <td class="inspect-td"><a href="DashboardWorkouts_details.php?WorkoutID=<?php echo $workout["WorkoutID"] ?>">Inspecteer</a></td>
                         </tr>
                         <?php endforeach; ?>
+
+                        
                     </tbody>
                 </table>
                 <a id="createworkout" href="createworkout.php">Maak Workout</a>
