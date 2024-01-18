@@ -16,6 +16,25 @@ if (isset($_SESSION['user'])) {
     exit();
 }
         
+$sql_workouts = "SELECT count(*) FROM Workouts";
+
+
+// will return 1 if the rol is ROLE, otherwise it will return 0.
+// SUM will add all the 1's and 0's together, resulting in the amount of that role.
+$sql_users = "SELECT
+            COUNT(*) AS TotalCount,
+            SUM(CASE WHEN rol = 'Manager' THEN 1 ELSE 0 END) AS ManagerCount,
+            SUM(CASE WHEN rol = 'Regular' THEN 1 ELSE 0 END) AS RegularCount,
+            SUM(CASE WHEN rol = 'Administrator' THEN 1 ELSE 0 END) AS AdministratorCount
+            FROM Gebruiker";
+
+$result = mysqli_query($conn, $sql_workouts);
+$workouts = mysqli_fetch_row($result);
+
+$result = mysqli_query($conn, $sql_users);
+$users = mysqli_fetch_row($result);
+
+
 ?>
 
 <!DOCTYPE html>
@@ -45,9 +64,17 @@ if (isset($_SESSION['user'])) {
             <p>Welkom op het dashboard. Hier kan je de statistieken van de website bekijken.</p>
 
             <div class="statistics-display">
-                <h2>Aantal gebruikers: <?php echo mysqli_fetch_row(mysqli_query($conn, "SELECT COUNT(*) FROM Gebruiker"))[0] ?></h2>
+                 
+                <div>
+                    <h2>Aantal gebruikers: <?php echo $users[0] ?></h2>
+                    <p>Regulars: <?php echo $users[2] ?></p>
+                    <p>Managars: <?php echo $users[1] ?></p>
+                    <p>Administrators: <?php echo $users[3] ?></p>
+                </div>
 
-                <h2>Aantal workouts: <?php echo mysqli_fetch_row(mysqli_query($conn, "SELECT COUNT(*) FROM Workouts"))[0]; ?></h2>
+                <h2>Aantal workouts: <?php echo $workouts[0]; ?></h2>
+
+               
             </div>
         </section>
         </main>

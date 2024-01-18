@@ -2,12 +2,6 @@
 
 require "database.php";
 
-// var_dump($_POST);
-
-// foreach ($_POST as $key => $value) {
-//     echo "<br>" . $key . " " . $value . "<br>";
-// }
-
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     echo "Incorrect request method";
     exit;
@@ -53,7 +47,7 @@ if (
     empty($mobielnummer)
  ) 
  {
-    echo "Vul alle velden in";
+    echo "Vul alle verplichte velden in";
     exit;
  }
 

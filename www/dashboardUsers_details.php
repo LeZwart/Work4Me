@@ -57,7 +57,7 @@ $gebruiker = mysqli_fetch_assoc($result);
                 </nav>
             </section>
             <section class="info-section">
-                <h1>Gebruiker Details (TODO)</h1>
+                <h1><a href="dashboardUsers.php">< Terug naar gebruikers lijst</a></h1>
                 <br>
 
                 <?php 
