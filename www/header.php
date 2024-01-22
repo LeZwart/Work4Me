@@ -1,5 +1,5 @@
 <?php
-// file that calls this must contain the following:
+// file that "requires" this must contain the following:
 
     // session_start();
     // require "database.php";

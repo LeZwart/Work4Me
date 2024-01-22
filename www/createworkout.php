@@ -84,7 +84,7 @@ if (isset($_SESSION['user'])) {
         
         // Make sure only numbers are entered
         let value = duur_element.value;
-        value = value.replace(/\D/g, ''); // Remove non-numeric characters
+        value = value.replace(/\D/g, ''); // Remove non numeric characters
         duur_element.value = value;
     
     });

@@ -24,6 +24,8 @@ if (isset($_GET['id'])) {
     exit();
 }
 
+
+// Get user details from Gebruiker and Woonplaats tables
 $sql = "SELECT * 
         FROM Gebruiker 
         JOIN Woonplaats ON Gebruiker.WoonplaatsID = Woonplaats.WoonplaatsID 
