@@ -21,7 +21,7 @@ $permission = new Permission();
 
         <main class="homepage-main">
             <section>
-                <h2>Word fit met ons!</h2>
+                <h2>Wordt fit met ons!</h2>
                 <?php 
                 if (isset($_SESSION['user'])) {
                     echo "<p>Welkom " . $_SESSION['user']['Gebruikersnaam'] . "</p>";
